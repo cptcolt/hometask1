@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/chartersListScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="ru.skillbranch.gameofthrones.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_chartersListScreen"
+            app:destination="@id/chartersListScreen"
+            app:enterAnim="@anim/fragment_fade_exit"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/chartersListScreen"
+        android:name="ru.skillbranch.gameofthrones.ChartersListScreen"
+        android:label="fragment_charters_list_screen"
+        tools:layout="@layout/fragment_charters_list_screen" >
+        <action
+            android:id="@+id/action_chartersListScreen_to_characterScreen2"
+            app:destination="@id/characterScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterScreen"
+        android:name="ru.skillbranch.gameofthrones.CharacterScreen"
+        android:label="fragment_character_screen"
+        tools:layout="@layout/fragment_character_screen" >
+        <argument
+            android:name="charId"
+            app:argType="string" />
+        <argument
+            android:name="house"
+            app:argType="string" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_characterScreen_self"
+            app:destination="@id/characterScreen" />
+    </fragment>
+</navigation>
