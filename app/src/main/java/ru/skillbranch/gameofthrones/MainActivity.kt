@@ -1,6 +1,7 @@
 package ru.skillbranch.gameofthrones
 
 import android.app.Application
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import androidx.navigation.Navigation
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     lateinit var viewModel: MainViewModel
@@ -21,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_main)
-        App.applicationContext = applicationContext;
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         navController = Navigation.findNavController(this, R.id.my_nav_host_fragment)
         savedInstanceState?:prepare()

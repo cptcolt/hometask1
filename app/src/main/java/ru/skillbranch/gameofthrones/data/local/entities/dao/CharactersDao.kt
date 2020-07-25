@@ -40,4 +40,7 @@ interface CharactersDao : BaseDao<Character> {
             .filterNotNull()
             .also { if (it.isNotEmpty()) update(it)}
     }
+
+    @Query("DELETE FROM characters")
+    fun drop()
 }

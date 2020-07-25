@@ -18,7 +18,7 @@ import ru.skillbranch.gameofthrones.data.local.entities.dao.HouseDao
 
 object DbManager {
     val db = databaseBuilder(
-        App.applicationContext,
+        App.appContext,
         AppData::class.java,
         DB_NAME
     ).build()

@@ -25,4 +25,7 @@ interface HouseDao: BaseDao<House> {
     @Query("SELECT id, name, region, coatOfArms, words, titles, seats, currentLord, heir, overlord, founded, founder, diedOut, ancestralWeapons FROM houses")
     fun getHousesList(): List<House>
 
+    @Query("DELETE FROM houses")
+    fun drop()
+
 }

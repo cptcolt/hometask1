@@ -64,14 +64,14 @@ class CharacterScreen : Fragment() {
             character.father?.let {
                 group_father.visibility = View.VISIBLE
                 btn_father.text = it.name
-                val action = ChartersListScreenDirections.actionChartersListScreenToCharacterScreen2(it.id, it.house, it.name)
+                val action =  CharacterScreenDirections.actionCharacterScreenSelf(it.id, it.house, it.name)
                 btn_father.setOnClickListener {findNavController().navigate(action)}
             }
 
             character.mother?.let {
                 group_mother.visibility = View.VISIBLE
                 btn_mother.text = it.name
-                val action = ChartersListScreenDirections.actionChartersListScreenToCharacterScreen2(it.id, it.house, it.name)
+                val action =  CharacterScreenDirections.actionCharacterScreenSelf(it.id, it.house, it.name)
                 btn_mother.setOnClickListener {findNavController().navigate(action)}
             }
 
